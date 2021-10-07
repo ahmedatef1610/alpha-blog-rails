@@ -67,7 +67,8 @@ rails g migration create_articles
 
 ===================
 bundle install --without production
-bundle config set --local without 'production'
+bundle config set --local without 'production' 
+bundle config without production
 ===================
 # Scaffold generator command to create an article model (with two attributes), 
 articles controller, views for articles and migration file to create articles table:
