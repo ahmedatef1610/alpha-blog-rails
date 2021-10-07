@@ -103,7 +103,10 @@ Article.all
 ===================
 reload!
 ===================
-
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
+byebug
+continue # again work server
+===================
 
 =====================================================================================================
 

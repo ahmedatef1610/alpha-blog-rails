@@ -38,9 +38,12 @@ Article.find(1).destroy
 Article.last.destroy
 =========
 article = Article.new()
+article.valid? # false
 article.save # false because of validates in article.rb in models file
 article.errors
 article.errors.full_messages
+article.errors.size
+
 =========
 
 ========================================================================================
