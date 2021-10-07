@@ -17,6 +17,8 @@ module AlphaBlog
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = "Cairo" # https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html
+
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
