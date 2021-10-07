@@ -48,6 +48,7 @@ rails _5.2.6_ new second_app
 rails server
 rails s
 rails server -b 0.0.0.0 -p 80
+rails s -b 0.0.0.0
 
 ===========
 gem uninstall rails -v 5.2.6
@@ -64,6 +65,7 @@ rails g controller pages
 
 rails generate migration create_articles
 rails g migration create_articles
+rails g migration add_timestamps_to_articles
 
 ===================
 bundle install --without production # DEPRECATED
