@@ -1,0 +1,110 @@
+ridk install
+ridk
+
+ruby
+irb
+
+ruby file.rb 
+rufo file.rb 
+
+==========================================
+
+===========
+C:\Ruby25-x64\bin
+C:\Ruby30-x64\bin
+
+===========
+/c/Ruby25-x64/bin/ruby
+/c/Ruby25-x64/bin/gem
+
+===========
+gem install solargraph
+gem install rufo
+===========
+
+=====================================================================================================
+gem list
+===========
+gem list bundler
+gem update bundler
+===========
+gem install sqlite3
+gem install webpacker
+gem install rails
+gem install rails -v 5.2.6
+
+===========
+rails -v
+gem list rails
+===========
+rails new name_of_app
+rails new test_app
+rails new first_app
+===========
+rails _5.2.6_ new name_of_app
+rails _5.2.6_ new test_app
+rails _5.2.6_ new second_app
+===========
+rails server
+rails s
+rails server -b 0.0.0.0 -p 80
+
+===========
+gem uninstall rails -v 5.2.6
+gem cleanup rails -v 5.2.6
+===========
+
+=====================================================================================================
+(alt + p) => RACK_MINI_PROFILER 
+?pp=disable
+?pp=enable
+==========================================
+rails generate controller pages
+rails g controller pages
+
+rails generate migration create_articles
+rails g migration create_articles
+
+===================
+bundle install --without production
+bundle config set --local without 'production'
+===================
+# Scaffold generator command to create an article model (with two attributes), 
+articles controller, views for articles and migration file to create articles table:
+
+rails generate scaffold Article title:string description:text
+rails g scaffold Article title:string description:text
+rails db:migrate
+rails db:rollback
+===================
+rails routes --expanded
+===================
+bundle exec rake schedular:clear_log
+rake --tasks
+rake log:clear
+rake tmp:clear
+===================
+rails console
+rails c
+===========
+Article.all # class name in models file
+
+Article.create(title: "first article", description: "Description of first article") # make sure Article is capitalized if using this method
+
+article = Article.new
+article.title = "second article"
+article.description = "description of second article"
+article.save
+
+article = Article.new(title: "third article", description: "description of third article")
+article.save
+
+Article.all
+===================
+reload!
+===================
+
+
+=====================================================================================================
+
+

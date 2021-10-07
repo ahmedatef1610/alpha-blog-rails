@@ -1,0 +1,46 @@
+===================
+rails console
+rails c
+========================================================================================
+Article.all # class name in models file
+=========
+Article.create(title: "first article", description: "Description of first article") # make sure Article is capitalized if using this method
+=========
+article = Article.new
+article.title = "second article"
+article.description = "description of second article"
+article.save
+=========
+article = Article.new(title: "third article", description: "description of third article")
+article.save
+=========
+Article.create(title: "fourth article", description: "Description of fourth article")
+Article.create(title: "fifth article", description: "Description of fifth article")
+=========
+Article.all
+========================================================================================
+Article.find(1) # replace 1 with id of article you want to find
+=========
+article = Article.find(1)
+article.title # to display (get) the title
+article.description # to display (get) the description
+=========
+article = Article.find(1)
+article.title = "new title"
+article.description = "new description"
+article.save
+=========
+article = Article.find(1)
+article = Article.last
+article.destroy
+=========
+Article.find(1).destroy
+Article.last.destroy
+=========
+article = Article.new()
+article.save # false because of validates in article.rb in models file
+article.errors
+article.errors.full_messages
+=========
+
+========================================================================================
