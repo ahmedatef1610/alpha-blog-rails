@@ -66,8 +66,8 @@ rails generate migration create_articles
 rails g migration create_articles
 
 ===================
-bundle install --without production
-bundle config set --local without 'production' 
+bundle install --without production # DEPRECATED
+bundle config set --local without 'production' # not working
 bundle config without production
 ===================
 # Scaffold generator command to create an article model (with two attributes), 
