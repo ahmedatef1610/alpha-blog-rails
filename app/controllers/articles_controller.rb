@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
     def show
-        # byebug
+        # byebug # to make debugging
         # article = Article.find(params[:id]) # varable . it can't pass to view
         # puts "="*50
         # puts params # {"controller"=>"articles", "action"=>"show", "id"=>"1"}
@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
 
         
     end
-
+    def index
+        @articles = Article.all
+    end
 
 end

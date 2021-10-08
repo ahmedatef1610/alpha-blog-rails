@@ -1,0 +1,29 @@
+
+
+
+<h1>Articles listing page 📋</h1>
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <%# @articles.each do |article| %>
+
+        <% for article, index in @articles.each_with_index %>
+            <tr>
+                <td><%= article.title %></td>
+                <td><%= article.description %></td>
+                <td>-</td>
+            </tr>
+        <% end %>
+
+    </tbody>
+
+</table>
