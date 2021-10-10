@@ -81,6 +81,7 @@ rails db:migrate
 rails db:rollback
 ===================
 rails routes --expanded
+rails routes -c articles
 ===================
 bundle exec rake schedular:clear_log
 rake --tasks

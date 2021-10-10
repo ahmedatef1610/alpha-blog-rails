@@ -23,7 +23,7 @@ model: :article
     <% end %>
 <% end %>
 
-<%= form_with scope: :article, url: articles_path, local: true, do |f| %>
+<%= form_with scope: :article, url: articles_path, local: true do |f| %>
     <div>
         <%= f.label :title, class:"form-label" %> 
         <br>
