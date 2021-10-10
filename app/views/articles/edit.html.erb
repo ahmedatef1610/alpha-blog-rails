@@ -1,0 +1,27 @@
+
+<h1>Edit article 📝</h1>
+
+
+<% if @article.errors.any? %>
+    <% for msg, index in @article.errors.full_messages.each_with_index %>
+        <div class="alert alert-warning "><%= msg %></div>
+    <% end %>
+<% end %>
+
+<%= form_with model: @article, local: true do |f| %>
+    <div>
+        <%= f.label :title, class:"form-label" %> 
+        <br>
+        <%= f.text_field :title, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :description, class:"form-label" %> 
+        <br>
+        <%= f.text_area :description, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.submit class: "btn btn-primary w-100 mt-3"  %>
+    </div>
+<% end %>
+
+<%# url: articles_path, %>

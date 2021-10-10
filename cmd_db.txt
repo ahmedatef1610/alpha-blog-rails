@@ -43,7 +43,7 @@ article.save # false because of validates in article.rb in models file
 article.errors
 article.errors.full_messages
 article.errors.size
-
 =========
-
+article.update(title: "title")
+=========
 ========================================================================================
