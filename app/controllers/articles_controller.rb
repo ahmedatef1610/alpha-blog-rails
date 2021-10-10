@@ -18,15 +18,32 @@ class ArticlesController < ApplicationController
 
 
     def new
-        
+        @article = Article.new
     end
 
 
     def create
 
-        render plain: params
+        # render html: params
+        # render plain: params
         # render json: params["article"]
         # render json: params
+        
+        @article = Article.new(params.require("article").permit("title","description"))
+
+        # render plain: @article
+        # render plain: @article.inspect
+        # render json: @article
+
+        if @article.save
+
+            flash[:notice] = "Article was created successfully"
+
+            # redirect_to article_path(@article) # prefix_path . prefix in routes so we use prefix_path
+            redirect_to @article
+        else
+            render 'new'
+        end
 
 
     end

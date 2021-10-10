@@ -19,8 +19,14 @@
   </head>
 
   <body>
+
+    <% for type, msg in flash %>
+      <div class="alert alert-sucess"><%= msg %></div>
+    <% end %>
+
     <div class="container py-5">
       <%= yield %>
     </div>
+    
   </body>
 </html>

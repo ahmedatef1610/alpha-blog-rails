@@ -16,7 +16,14 @@ scope: :article
 model: :article
 
 %>
-<%= form_with scope: :article, url: articles_path, local: true, class: :ggggggg do |f| %>
+
+<% if @article.errors.any? %>
+    <% for msg, index in @article.errors.full_messages.each_with_index %>
+        <div class="alert alert-warning "><%= msg %></div>
+    <% end %>
+<% end %>
+
+<%= form_with scope: :article, url: articles_path, local: true, do |f| %>
     <div>
         <%= f.label :title, class:"form-label" %> 
         <br>
