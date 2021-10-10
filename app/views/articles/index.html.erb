@@ -3,7 +3,7 @@
 
 <h1>Articles listing page 📋</h1>
 
-<table class="table mt-5">
+<table class="table mt-5 table-bordered">
     <thead>
         <tr>
             <th>Title</th>
@@ -15,12 +15,15 @@
     <tbody>
 
         <%# @articles.each do |article| %>
-
         <% for article, index in @articles.each_with_index %>
             <tr>
                 <td><%= article.title %></td>
                 <td><%= article.description %></td>
-                <td>-</td>
+                <td>
+                    <%= link_to "Show", article_path(article) , class: "btn btn-secondary btn-sm" %>
+                    <%= link_to "Edit", edit_article_path(article) , class: "btn btn-warning btn-sm" %>
+                    <%= link_to "Delete", article_path(article) , class: "btn btn-danger btn-sm", method: "delete" %>
+                </td>
             </tr>
         <% end %>
 
