@@ -9,3 +9,9 @@
     <span class="lead"><%= @article.description %></span>
 </p>
 
+<p>
+    <%= link_to "Articles Listing", articles_path , class: "btn btn-primary btn-sm" %>
+    <%= link_to "Edit", edit_article_path(@article) , class: "btn btn-warning btn-sm" %>
+    <%= link_to "Delete", article_path(@article) , class: "btn btn-danger btn-sm", method: "delete", data: {confirm: "Are you sure?"} %>
+</p>
+
