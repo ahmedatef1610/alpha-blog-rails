@@ -1,0 +1,34 @@
+
+<h1>Create a new article 📝</h1>
+
+
+
+
+
+<%# (local) for http post insted of ajax request  %>
+<%# 
+In Rails 6.0 and 5.2, all forms using form_with implement remote: true by default. 
+These forms will submit data using an XHR (Ajax) request. 
+To disable this include local: true. 
+%>
+<%# 
+scope: :article
+model: :article
+
+%>
+<%= form_with scope: :article, url: articles_path, local: true, class: :ggggggg do |f| %>
+    <div>
+        <%= f.label :title, class:"form-label" %> 
+        <br>
+        <%= f.text_field :title, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :description, class:"form-label" %> 
+        <br>
+        <%= f.text_area :description, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.submit class: "btn btn-primary btn-block"  %>
+    </div>
+<% end %>
+
