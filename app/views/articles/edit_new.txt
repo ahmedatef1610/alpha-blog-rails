@@ -1,3 +1,5 @@
+# new
+
 <% if @article.errors.any? %>
     <% for msg, index in @article.errors.full_messages.each_with_index %>
         <div class="alert alert-warning "><%= msg %></div>
@@ -21,7 +23,7 @@
 <% end %>
 
 =====================================================================================================
-
+# edit
 
 <% if @article.errors.any? %>
     <% for msg, index in @article.errors.full_messages.each_with_index %>
