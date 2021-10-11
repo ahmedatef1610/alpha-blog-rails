@@ -21,10 +21,7 @@
   <body>
     <div class="container py-5">
     
-      <% for type, msg in flash %>
-        <div class="alert alert-success"><%= msg %></div>
-      <% end %>
-
+      <%= render "layouts/messages" %>
       <%= yield %>
 
     </div>

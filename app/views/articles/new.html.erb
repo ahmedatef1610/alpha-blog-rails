@@ -1,10 +1,6 @@
 
 <h1>Create a new article 📝</h1>
 
-
-
-
-
 <%# (local) for http post insted of ajax request  %>
 <%# 
 In Rails 6.0 and 5.2, all forms using form_with implement remote: true by default. 
@@ -17,28 +13,7 @@ model: :article
 
 %>
 
-<% if @article.errors.any? %>
-    <% for msg, index in @article.errors.full_messages.each_with_index %>
-        <div class="alert alert-warning "><%= msg %></div>
-    <% end %>
-<% end %>
-
-<%= form_with scope: :article, url: articles_path, local: true do |f| %>
-    <div>
-        <%= f.label :title, class:"form-label" %> 
-        <br>
-        <%= f.text_field :title, class:"form-control" %>
-    </div>
-    <div>
-        <%= f.label :description, class:"form-label" %> 
-        <br>
-        <%= f.text_area :description, class:"form-control" %>
-    </div>
-    <div>
-        <%= f.submit class: "btn btn-primary w-100 mt-3"  %>
-    </div>
-<% end %>
-
+<%= render "form" %>
 
 <p class="mt-5">
     <%= link_to "Articles Listing", articles_path , class: "btn btn-primary btn-sm" %>
