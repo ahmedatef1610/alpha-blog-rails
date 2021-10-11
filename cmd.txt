@@ -115,6 +115,8 @@ heroku login
 heroku git:remote -a alpha-blog-rails-eg
 git push heroku master
 heroku run rails db:migrate
+heroku open
+
 
 ===================
 
