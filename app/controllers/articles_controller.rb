@@ -1,86 +1,93 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: ["show", "edit", "update", "destroy"]
 
-    before_action :set_article, only: ["show", "edit", "update", "destroy"]
+  def show
+    # byebug # to make debugging
+    # article = Article.find(params[:id]) # varable . it can't pass to view
+    # puts "="*50
+    # puts params # {"controller"=>"articles", "action"=>"show", "id"=>"1"}
+    # puts params["id"] # 1
+    # puts params[:id] # 1
+    # puts "="*50
+    
+    # @article = Article.find(params[:id]) # instance varable . it can pass to view
+   
+    
 
-    def show
-        # byebug # to make debugging
-        # article = Article.find(params[:id]) # varable . it can't pass to view
-        # puts "="*50
-        # puts params # {"controller"=>"articles", "action"=>"show", "id"=>"1"}
-        # puts params["id"] # 1
-        # puts params[:id] # 1
-        # puts "="*50
+  end
 
+  ####################################################################################################
+  def index
+    @articles = Article.all
+    @activeInNavber = "articles"
+  end
 
-        # @article = Article.find(params[:id]) # instance varable . it can pass to view
+  ####################################################################################################
+  def new
+    @article = Article.new
+  end
 
-        
+  ####################################################################################################
+  def create
+
+    # render html: params
+    # render plain: params
+    # render json: params["article"]
+    # render json: params
+
+    # @article = Article.new(params.require("article").permit("title","description"))
+    @article = Article.new(article_params)
+
+    # render plain: @article
+    # render plain: @article.inspect
+    # render json: @article
+
+    if @article.save
+      flash[:notice] = "Article was created successfully"
+
+      # redirect_to article_path(@article) # prefix_path . prefix in routes so we use prefix_path
+      redirect_to @article
+    else
+      render "new"
     end
-    ####################################################################################################
-    def index
-        @articles = Article.all
-    end
-    ####################################################################################################
-    def new
-        @article = Article.new
-    end
-    ####################################################################################################
-    def create
+  end
 
-        # render html: params
-        # render plain: params
-        # render json: params["article"]
-        # render json: params
-        
-        # @article = Article.new(params.require("article").permit("title","description"))
-        @article = Article.new(article_params)
+  ####################################################################################################
+  def edit
+    # @article = Article.find(params["id"])
+  end
 
-        # render plain: @article
-        # render plain: @article.inspect
-        # render json: @article
+  ####################################################################################################
+  def update
+    # @article = Article.find(params["id"])
 
-        if @article.save
-
-            flash[:notice] = "Article was created successfully"
-
-            # redirect_to article_path(@article) # prefix_path . prefix in routes so we use prefix_path
-            redirect_to @article
-        else
-            render 'new'
-        end
-
-
+    # if @article.update(params.require("article").permit("title","description"))
+    if @article.update(article_params)
+      flash[:notice] = "Article was updated successfully"
+      redirect_to @article
+    else
+      render "edit"
     end
-    ####################################################################################################
-    def edit
-        # @article = Article.find(params["id"])
-    end
-    ####################################################################################################
-    def update
-        # @article = Article.find(params["id"])
+  end
 
-        # if @article.update(params.require("article").permit("title","description"))
-        if @article.update(article_params)
-            flash[:notice] = "Article was updated successfully"
-            redirect_to @article
-        else
-            render "edit"
-        end
-    end
-    ####################################################################################################
-    def destroy
-        # @article = Article.find(params["id"])
-        @article.destroy
-        redirect_to articles_path
-    end
-    ####################################################################################################
-    private
-    def set_article
-        @article = Article.find(params["id"])
-    end
-    def article_params
-        params.require("article").permit("title","description")
-    end
-    ####################################################################################################
+  ####################################################################################################
+  def destroy
+    # @article = Article.find(params["id"])
+    @article.destroy
+    redirect_to articles_path
+  end
+
+  ####################################################################################################
+  private
+
+  def set_article
+    @article = Article.find(params["id"])
+  end
+
+  def article_params
+    params.require("article").permit("title", "description")
+  end
+
+  ####################################################################################################
 
 end
