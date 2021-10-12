@@ -116,10 +116,13 @@ heroku git:remote -a alpha-blog-rails-eg
 git push heroku master
 heroku run rails db:migrate
 heroku open
-
-
 ===================
-
+https://www.mashrurhossain.com/blog/rails6bootstrap4
+yarn add jquery
+yarn add bootstrap@5.1.3
+yarn add @popperjs/core@2.10.2
+yarn add popper.js
+===================
 
 =====================================================================================================
 
