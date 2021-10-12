@@ -1,7 +1,12 @@
 @import 'bootstrap/dist/css/bootstrap';
 
 /****************************************************************/
-.my_img_home {
+.home_card {
+    /* display: flex;
+    flex-direction: column; */
+    overflow-y: auto;
+}
+.home_img {
     height: 450px;
     object-fit: cover;
     object-position: 50% 75%;

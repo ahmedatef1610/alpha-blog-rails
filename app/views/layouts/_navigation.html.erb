@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-
-    <a class="navbar-brand" href="<%= root_path %>">ALPHA BLOG</a>
+  
+    <a class="navbar-brand" href="<%= root_path %>">
+      <img class="d-inline-block" width="35" src="<%= asset_path("icon.png") %>" alt="icon">
+      ALPHA BLOG
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
@@ -9,18 +12,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
         <li class="nav-item">
           <a class="nav-link <%= @activeInNavber=="home" ? "active" : "" %>" href="<%= root_path %>">Home</a>
         </li>
-
         <li class="nav-item">
           <a class="nav-link <%= @activeInNavber=="about" ? "active" : "" %>" href="<%= about_path %>">About</a>
         </li>
-
       </ul>
     </div>
-    
 
   </div>
 </nav>
