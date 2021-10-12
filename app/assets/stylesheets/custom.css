@@ -4,7 +4,7 @@
 .my_img_home {
     height: 450px;
     object-fit: cover;
-    object-position: center center;
+    object-position: 50% 75%;
 }
 
 /****************************************************************/
