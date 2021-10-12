@@ -1,38 +1,29 @@
-
-
-
 <h1>Articles listing page 📋</h1>
-
-
 <div>
-    <%= link_to "Create a New Article", new_article_path , class: "btn btn-primary" %>
+  <%= link_to "Create a New Article", new_article_path , class: "btn btn-primary" %>
 </div>
-
 <table class="table mt-3 table-bordered">
-    <thead>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%# @articles.each do |article| %>
+      <% for article, index in @articles.each_with_index %>
         <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Action</th>
+          <td><%= article.id %></td>
+          <td><%= article.title %></td>
+          <td><%= article.description %></td>
+          <td>
+            <%= link_to "Show", article_path(article) , class: "btn btn-secondary btn-sm" %>
+            <%= link_to "Edit", edit_article_path(article) , class: "btn btn-warning btn-sm" %>
+            <%= link_to "Delete", article_path(article) , class: "btn btn-danger btn-sm", method: "delete", data: {confirm: "Are you sure?"}  %>
+          </td>
         </tr>
-    </thead>
-
-    <tbody>
-
-        <%# @articles.each do |article| %>
-        <% for article, index in @articles.each_with_index %>
-            <tr>
-                <td><%= article.title %></td>
-                <td><%= article.description %></td>
-                <td>
-                    <%= link_to "Show", article_path(article) , class: "btn btn-secondary btn-sm" %>
-                    <%= link_to "Edit", edit_article_path(article) , class: "btn btn-warning btn-sm" %>
-                    <%= link_to "Delete", article_path(article) , class: "btn btn-danger btn-sm", method: "delete", data: {confirm: "Are you sure?"}  %>
-                </td>
-            </tr>
-        <% end %>
-
+      <% end %>
     </tbody>
-
-</table>
-
+  </table>
