@@ -1,7 +1,11 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-.btn {
-
-    /* background-color: #FDF6EA !important; */
-    
+/****************************************************************/
+.my_img_home {
+    height: 450px;
+    object-fit: cover;
+    object-position: center center;
 }
+
+/****************************************************************/
+
