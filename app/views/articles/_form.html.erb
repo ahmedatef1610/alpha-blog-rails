@@ -1,21 +1,36 @@
+
 <% if @article.errors.any? %>
-    <% for msg, index in @article.errors.full_messages.each_with_index %>
-        <div class="alert alert-warning "><%= msg %></div>
-    <% end %>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <% for msg, index in @article.errors.full_messages.each_with_index %>
+        <div class="alert alert-warning"><%= msg %></div>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 
-<%= form_with model: @article, local: true do |f| %>
-    <div>
-        <%= f.label :title, class:"form-label" %> 
-        <br>
-        <%= f.text_field :title, class:"form-control" %>
-    </div>
-    <div>
-        <%= f.label :description, class:"form-label" %> 
-        <br>
-        <%= f.text_area :description, class:"form-control" %>
-    </div>
-    <div>
-        <%= f.submit class: "btn btn-primary w-100 mt-3"  %>
-    </div>
-<% end %>
+<div class="row justify-content-center">
+  <div class="col-8">
+    <%= form_with model: @article, local: true, class:"p-3 mt-3 bg-secondary shadow rounded-3" do |f| %>
+      <div class="row mt-3">
+        <%= f.label :title, class:"col-md-2 col-form-label" %>
+        <div class="col-md-10">
+          <%= f.text_field :title, class:"form-control shadow rounded-3", placeholder:"Title of Article" %>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <%= f.label :description, class:"col-md-2 col-form-label" %>
+        <div class="col-md-10">
+          <%= f.text_area :description, class:"form-control shadow rounded-3", placeholder:"Description of Article", rows:7 %>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <%= f.submit class: "btn btn-light btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="text-center mt-3">
+  <%= link_to "[ cancel and return to articles listing ]", articles_path , class: "btn btn-link text-decoration-none text-capitalize shadow-none" %>
+</div>
