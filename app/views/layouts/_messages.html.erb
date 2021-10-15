@@ -1,3 +1,11 @@
-<% for type, msg in flash %>
-<div class="alert alert-success"><%= msg %></div>
-<% end %>
+<div class="container my-3">
+  <% for type, msg in flash %>
+    <div class="alert alert-success alert-dismissible fade show">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#check-circle-fill"/></svg>
+      <%= msg %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  <% end %>
+</div>
+<%# flash.each do |type, msg| %>
+  <%# end %>
