@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+> https://alpha-blog-rails-eg.herokuapp.com/
