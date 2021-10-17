@@ -47,3 +47,28 @@ article.errors.size
 article.update(title: "title")
 =========
 ========================================================================================
+
+
+User.all
+User
+=========
+user_1 = User.first
+=========
+Article.create(title: "fourth article", description: "Description of fourth article", user_id: user_1.id)
+Article.create(title: "fourth article", description: "Description of fourth article", user: user_1)
+=========
+user_1.articles.build(title: "fourth article", description: "Description of fourth article") => return new article
+_ => this in console mean last command
+article = _
+article.save
+=========
+user_2 = User.last
+article = Article.first
+
+article.update(user_id: user_2.id)
+article.update(user: user_2)
+
+user_2.articles << article
+=========
+
+========================================================================================
