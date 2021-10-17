@@ -136,6 +136,10 @@ rails g migration add_user_id_to_articles
 rails db:migrate
 
 ===================
+rails g migration create_users
+rails db:migrate
+
+===================
 
 
 =====================================================================================================
