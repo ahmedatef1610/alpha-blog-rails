@@ -69,12 +69,18 @@ article.update(user_id: user_2.id)
 article.update(user: user_2)
 
 user_2.articles << article
+
+user_2.articles
+article.user => user
+article.user_id => 2
 =========
 
 ========================================================================================
 User.create(username: "ahmed atef", email: "test@test.com")
 user = User.first
 user.destroy
+=========
+Article.update_all(user_id: User.first.id)
 =========
 
 ========================================================================================
