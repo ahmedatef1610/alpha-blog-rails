@@ -10,7 +10,8 @@
             <span>ID: <%= @article.id %></span>
             <span> - </span>
             <span>Created by</span>
-            <span><%= @article.user ? @article.user.username : "Ahmed Atef" %></span>
+            <span><%= @article.user ? @article.user.username : "anonymous" %></span>
+            <span><%# @article.user.username if @article.user %></span>
         </div>
         <div class="card-body">
             <div class="card-text text-start"><%= simple_format(@article.description) %></div>
