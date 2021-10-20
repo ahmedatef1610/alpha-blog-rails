@@ -83,5 +83,16 @@ user.destroy
 =========
 Article.update_all(user_id: User.first.id)
 =========
+BCrypt::Password.create("qwert12345")
+
+user = User.last
+user.password = "qwert12345"
+user.save
+
+
+user = User.last # (or User.find(enter id of user here))
+user.authenticate("qwert12345") # This, being the correct password will return the user object
+user.authenticate("enter incorrect password") # This, being an incorrect password, will return false
+=========
 
 ========================================================================================
