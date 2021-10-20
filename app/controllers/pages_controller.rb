@@ -1,8 +1,8 @@
 class PagesController < ApplicationController
     def home
-        @activeInNavber="home"
+        @activeInNavbar="home"
     end
     def about
-        @activeInNavber="about"
+        @activeInNavbar="about"
     end
 end

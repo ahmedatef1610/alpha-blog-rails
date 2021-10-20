@@ -19,13 +19,13 @@ class ArticlesController < ApplicationController
   ####################################################################################################
   def index
     @articles = Article.all
-    @activeInNavber = "articles"
+    @activeInNavbar = "articles"
   end
 
   ####################################################################################################
   def new
     @article = Article.new
-    @activeInNavber = "new_article"
+    @activeInNavbar = "new_article"
   end
 
   ####################################################################################################

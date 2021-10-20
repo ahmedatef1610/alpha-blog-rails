@@ -154,3 +154,4 @@ rails c
 
 rails routes --expanded
 rails routes -c articles
+rails routes -c users

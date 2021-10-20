@@ -1,5 +1,5 @@
-<% if @article.errors.any? %>
-  <% for msg, index in @article.errors.full_messages.each_with_index %>
+<% if obj.errors.any? %>
+  <% for msg, index in obj.errors.full_messages.each_with_index %>
     <div class="alert alert-danger alert-dismissible fade show m-1">
       <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
       <%= msg %>
