@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-    @activeInNavbar = "new_user"
+    @activeInNavbar = "users"
     @user = User.new
   end
 
@@ -18,7 +18,8 @@ class UsersController < ApplicationController
   end
   ####################################################################################################
 	def index
-		redirect_to signup_path
+		@activeInNavbar = "users"
+		@users = User.all
 	end
 	####################################################################################################
 	def edit

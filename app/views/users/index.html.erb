@@ -1,0 +1,28 @@
+<main class="flex-grow-1">
+  <div class="container my-3">
+    <h1 class="text-center mt-3">Alpha Bloggers</h1>
+    <% for user, index in @users.each_with_index %>
+      <div class="row justify-content-center mt-3">
+        <div class="col-8">
+          <div class="card text-center shadow">
+            <div class="card-header">
+              <span>ID: <%= user.id %> - </span>
+              <span><a href="<%= user_path(user) %>"><%= user.username %></a></span>
+              <span><%# link_to user.username, user %></span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to gravatar_for(user, size: 150), user %></h5>
+              <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+              <%= link_to "View profile", user_path(user) , class: "btn btn-info btn-sm" %>
+              <%= link_to "Edit profile", edit_user_path(user) , class: "btn btn-warning btn-sm" %>
+            </div>
+            <div class="card-footer text-muted">
+              <small>Joined  <%= time_ago_in_words(user.created_at) %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</main>
+<%= render "layouts/footer"%>
