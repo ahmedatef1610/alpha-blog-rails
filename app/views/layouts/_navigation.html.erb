@@ -39,6 +39,13 @@
           <a class="nav-link <%= @activeInNavbar=="users" ? "active" : "" %>" href="<%= users_path %>">Bloggers</a>
         </li>
 
+        <li class="nav-item">
+          <%= link_to 'Log in', login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete %>
+        </li>
+
       </ul>
 
     </div>

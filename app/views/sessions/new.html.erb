@@ -1,0 +1,30 @@
+<main class="flex-grow-1">
+  <div class="container my-3">
+    <h1 class="text-center my-3">Login</h1>
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <%= form_with scope: :session, url: login_path, local: true, class:"p-3 mt-3 bg-secondary shadow rounded-3" do |f| %>
+          <div class="row mt-3">
+            <%= f.label :email, class:"col-md-2 col-form-label" %>
+            <div class="col-md-10">
+              <%= f.email_field :email, class:"form-control shadow rounded-3", placeholder:"Enter your email"  %>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <%= f.label :password, class:"col-md-2 col-form-label" %>
+            <div class="col-md-10">
+              <%= f.password_field :password, class:"form-control shadow rounded-3", placeholder:"Enter your password"  %>
+            </div>
+          </div>
+          <div class="text-center mt-3">
+            <%= f.submit  "Login", class: "btn btn-light btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <%= link_to "[ cancel and return to articles listing ]", articles_path , class: "btn btn-link text-decoration-none text-capitalize shadow-none" %>
+    </div>
+  </div>
+</main>
+<%= render "layouts/footer"%>
