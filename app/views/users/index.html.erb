@@ -1,6 +1,16 @@
 <main class="flex-grow-1">
   <div class="container my-3">
     <h1 class="text-center mt-3">Alpha Bloggers</h1>
+    
+    
+    <div class="my-5 text-center">
+      <%= will_paginate @users, :container => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination pagination justify-content-center), previous_label: '&laquo;', next_label: '&raquo;' %>
+      <div class="page_info small">
+        <%= page_entries_info @users %>
+      </div>
+    </div>
+
+
     <% for user, index in @users.each_with_index %>
       <div class="row justify-content-center mt-3">
         <div class="col-8">
@@ -23,6 +33,15 @@
         </div>
       </div>
     <% end %>
+
+    <div class="my-5 text-center">
+      <%= will_paginate @users, :container => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination pagination justify-content-center), previous_label: '&laquo;', next_label: '&raquo;' %>
+      <div class="page_info small">
+        <%= page_entries_info @users %>
+      </div>
+    </div>
+
+    
   </div>
 </main>
 <%= render "layouts/footer"%>

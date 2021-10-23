@@ -148,6 +148,7 @@ rails db:migrate
 
 
 =====================================================================================================
+bundle install
 
 cd 1-complete_ruby__mashrur_hossain/2-intro_ruby_on_rails/alpha_blog/
 rails s -b 0.0.0.0

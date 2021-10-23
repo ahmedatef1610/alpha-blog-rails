@@ -7,7 +7,23 @@
       <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-warning btn-sm" %>
     </div>
     <h3 class="text-center mt-4">Articles</h3>
+
+
+    <div class="my-5 text-center">
+      <%= will_paginate @articles, :container => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination pagination justify-content-center), previous_label: '&laquo;', next_label: '&raquo;' %>
+      <div class="page_info small">
+        <%= page_entries_info @articles %>
+      </div>
+    </div>
+
     <%= render "articles/article" %>
+
+    <div class="my-5 text-center">
+      <%= will_paginate @articles, :container => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination pagination justify-content-center), previous_label: '&laquo;', next_label: '&raquo;' %>
+      <div class="page_info small">
+        <%= page_entries_info @articles %>
+      </div>
+    </div>
     
   </div>
 </main>

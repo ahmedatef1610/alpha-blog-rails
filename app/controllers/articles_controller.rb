@@ -3,14 +3,14 @@ class ArticlesController < ApplicationController
 
   def show
     # byebug # to make debugging
-    # article = Article.find(params[:id]) # varable . it can't pass to view
+    # article = Article.find(params[:id]) # variable . it can't pass to view
     # puts "="*50
     # puts params # {"controller"=>"articles", "action"=>"show", "id"=>"1"}
     # puts params["id"] # 1
     # puts params[:id] # 1
     # puts "="*50
     
-    # @article = Article.find(params[:id]) # instance varable . it can pass to view
+    # @article = Article.find(params[:id]) # instance variable . it can pass to view
    
     
 
@@ -18,7 +18,8 @@ class ArticlesController < ApplicationController
 
   ####################################################################################################
   def index
-    @articles = Article.all
+    # @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 5)
     @activeInNavbar = "articles"
   end
 

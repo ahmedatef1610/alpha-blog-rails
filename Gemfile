@@ -28,6 +28,9 @@ gem "bootsnap", ">= 1.4.4", require: false
 
 gem "htmlbeautifier", "~> 1.3", ">= 1.3.1"
 
+gem "will_paginate", "~> 3.3"
+gem "will_paginate-bootstrap-style"
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem "sqlite3", "~> 1.4"
