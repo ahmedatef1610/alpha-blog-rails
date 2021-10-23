@@ -1,32 +1,33 @@
 <main class="flex-grow-1">
   <div class="container my-3">
-
     <h1 class="text-center"><%= @article.title %></h1>
-
     <div class="row justify-content-center mt-3">
-    <div class="col-8">
+      <div class="col-8">
         <div class="card text-center shadow-lg">
-        <div class="card-header">
+          <div class="card-header">
             <span>ID: <%= @article.id %></span>
             <span> - </span>
             <span>Created by</span>
             <span><%= @article.user ? @article.user.username : "anonymous" %></span>
             <span><%# @article.user.username if @article.user %></span>
             <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
-        </div>
-        <div class="card-body">
+          </div>
+          <div class="card-body">
             <div class="card-text text-start"><%= simple_format(@article.description) %></div>
-            <%= link_to "Edit", edit_article_path(@article) , class: "btn btn-warning btn-sm" %>
-            <%= link_to "Delete", article_path(@article) , class: "btn btn-danger btn-sm", method: "delete", data: {confirm: "Are you sure?"}  %>
-        </div>
-        <div class="card-footer text-muted">
+
+            <% if logged_in? && @article.user == current_user %>
+              <%= link_to "Edit", edit_article_path(@article) , class: "btn btn-warning btn-sm" %>
+              <%= link_to "Delete", article_path(@article) , class: "btn btn-danger btn-sm", method: "delete", data: {confirm: "Are you sure?"}  %>
+            <% end %>
+            
+          </div>
+          <div class="card-footer text-muted">
             <small>Created <%= time_ago_in_words(@article.created_at) %> ago, 
-            Edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+              Edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-    </div>
-    
   </div>
 </main>
 <%= render "layouts/footer"%>

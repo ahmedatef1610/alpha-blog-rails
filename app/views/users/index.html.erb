@@ -1,16 +1,12 @@
 <main class="flex-grow-1">
   <div class="container my-3">
     <h1 class="text-center mt-3">Alpha Bloggers</h1>
-    
-    
     <div class="my-5 text-center">
       <%= will_paginate @users, :container => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination pagination justify-content-center), previous_label: '&laquo;', next_label: '&raquo;' %>
       <div class="page_info small">
         <%= page_entries_info @users %>
       </div>
     </div>
-
-
     <% for user, index in @users.each_with_index %>
       <div class="row justify-content-center mt-3">
         <div class="col-8">
@@ -24,7 +20,9 @@
               <h5 class="card-title"><%= link_to gravatar_for(user, size: 150), user %></h5>
               <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
               <%= link_to "View profile", user_path(user) , class: "btn btn-info btn-sm" %>
-              <%= link_to "Edit profile", edit_user_path(user) , class: "btn btn-warning btn-sm" %>
+              <% if logged_in? and user == current_user %>
+                <%= link_to "Edit profile", edit_user_path(user) , class: "btn btn-warning btn-sm" %>
+              <% end %>
             </div>
             <div class="card-footer text-muted">
               <small>Joined  <%= time_ago_in_words(user.created_at) %></small>
@@ -33,15 +31,12 @@
         </div>
       </div>
     <% end %>
-
     <div class="my-5 text-center">
       <%= will_paginate @users, :container => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination pagination justify-content-center), previous_label: '&laquo;', next_label: '&raquo;' %>
       <div class="page_info small">
         <%= page_entries_info @users %>
       </div>
     </div>
-
-    
   </div>
 </main>
 <%= render "layouts/footer"%>
