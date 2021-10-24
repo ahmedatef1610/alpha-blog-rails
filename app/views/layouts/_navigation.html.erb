@@ -55,7 +55,7 @@
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle <%= logged_in? ? "active" : "" %>" href="#" id="navbarDropdown" data-bs-toggle="dropdown">
-                <%= current_user.username %>
+                <%= "(Admin)" if current_user.admin? %> <%= current_user.username %>
               </a>
 
               <ul class="dropdown-menu">
