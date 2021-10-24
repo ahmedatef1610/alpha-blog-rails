@@ -98,5 +98,7 @@ user.authenticate("enter incorrect password") # This, being an incorrect passwor
 user.admin?
 user.toggle!(:admin)
 =========
+Article.delete_all
+=========
 
 ========================================================================================

@@ -119,6 +119,7 @@ heroku git:remote -a alpha-blog-rails-eg
 git push heroku master
 heroku run rails db:migrate
 heroku open
+heroku run rails console
 =====================================================================================================
 https://www.mashrurhossain.com/blog/rails6bootstrap4
 yarn add jquery
