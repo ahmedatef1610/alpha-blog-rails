@@ -7,6 +7,9 @@ irb
 ruby file.rb 
 rufo file.rb 
 
+
+ri 
+rdoc
 ==========================================
 
 ===========
@@ -27,12 +30,14 @@ gem list
 ===========
 gem list bundler
 gem update bundler
+gem cleanup bundler
 ===========
 gem install sqlite3
 gem install webpacker
 gem install rails
 gem install rails -v 5.2.6
-
+gem install rails -v 6.1.4.4
+gem install rails -v 5.2.2.1
 ===========
 rails -v
 gem list rails
@@ -55,6 +60,7 @@ gem uninstall rails -v 5.2.6
 gem cleanup rails -v 5.2.6
 ===========
 
+bundle info [gemname]
 =====================================================================================================
 (alt + p) => RACK_MINI_PROFILER 
 ?pp=disable
@@ -152,6 +158,7 @@ rails db:migrate
 
 
 =====================================================================================================
+bundle config without production
 bundle install
 
 cd 1-complete_ruby__mashrur_hossain/2-intro_ruby_on_rails/alpha_blog/
@@ -161,3 +168,59 @@ rails c
 rails routes --expanded
 rails routes -c articles
 rails routes -c users
+
+dokku run production rails routes --expanded
+=====================================================================================================
+
+sudo apt install postgresql
+sudo service postgresql start
+sudo -u postgres psql
+sudo -u postgres createuser <username>
+sudo -u postgres createdb <dbname>
+sudo -u postgres psql
+
+pgrep -u postgres -fa -- -D 
+=============================================
+git clone
+cd repo
+# install rvm (rvm --version)
+rvm install "ruby-2.5.3"
+gem install bundler -v 1.17.3
+bundle install
+rake db:create
+rake db:migrate
+
+rails s # webserver
+rails c # debug development
+
+
+
+sudo apt-get install libpq-dev
+=============================================
+
+
+ls /etc/postgresql/12/main
+cat /etc/postgresql/12/main/
+service postgresql
+service postgresql status
+
+sudo -i -u postgres
+sudo su postgres
+
+sudo -u postgres createuser <username>
+sudo -u postgres createuser --interactive
+sudo -u postgres createdb spider_nest_development
+sudo -u postgres createdb spider_nest_development
+
+
+sudo -u postgres psql
+sudo -u ahmed psql
+
+
+
+\conninfo
+\l
+\du
+
+=====================================================================================================
+
