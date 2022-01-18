@@ -164,6 +164,8 @@ rails db:migrate
 
 
 =====================================================================================================
+
+=====================================================================================================
 bundle config without production
 bundle install
 
@@ -184,49 +186,49 @@ dokku run production rails routes --expanded
 =====================================================================================================
 =====================================================================================================
 =====================================================================================================
-sudo apt install postgresql
-sudo service postgresql start
-sudo -u postgres psql
-sudo -u postgres createuser <username>
-sudo -u postgres createdb <dbname>
-sudo -u postgres psql
+    sudo apt install postgresql
+    sudo service postgresql start
+    sudo -u postgres psql
+    sudo -u postgres createuser <username>
+    sudo -u postgres createdb <dbname>
+    sudo -u postgres psql
 
-pgrep -u postgres -fa -- -D 
-=============================================
-git clone
-cd repo
-# install rvm (rvm --version)
-rvm install "ruby-2.5.3"
-gem install bundler -v 1.17.3
-bundle install
-rake db:create
-rake db:migrate
+    pgrep -u postgres -fa -- -D 
+    =============================================
+    git clone
+    cd repo
+    # install rvm (rvm --version)
+    rvm install "ruby-2.5.3"
+    gem install bundler -v 1.17.3
+    bundle install
+    rake db:create
+    rake db:migrate
 
-rails s # webserver
-rails c # debug development
+    rails s # webserver
+    rails c # debug development
 
-sudo apt-get install libpq-dev
-=============================================
-ls /etc/postgresql/12/main
-cat /etc/postgresql/12/main/
-service postgresql
-service postgresql status
+    sudo apt-get install libpq-dev
+    =============================================
+    ls /etc/postgresql/12/main
+    cat /etc/postgresql/12/main/
+    service postgresql
+    service postgresql status
 
-sudo -i -u postgres
-sudo su postgres
+    sudo -i -u postgres
+    sudo su postgres
 
-sudo -u postgres createuser <username>
-sudo -u postgres createuser --interactive
-sudo -u postgres createdb spider_nest_development
-sudo -u postgres createdb spider_nest_development
+    sudo -u postgres createuser <username>
+    sudo -u postgres createuser --interactive
+    sudo -u postgres createdb spider_nest_development
+    sudo -u postgres createdb spider_nest_development
 
-sudo -u postgres psql
-sudo -u ahmed psql
+    sudo -u postgres psql
+    sudo -u ahmed psql
 
-\conninfo
-\l
-\du
-=====================================================================================================
-wsl --list --verbose
-wsl --shutdown
+    \conninfo
+    \l
+    \du
+    =====================================================================================================
+    wsl --list --verbose
+    wsl --shutdown
 =====================================================================================================
