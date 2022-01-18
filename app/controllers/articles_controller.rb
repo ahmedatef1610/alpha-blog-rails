@@ -49,6 +49,8 @@ class ArticlesController < ApplicationController
     # render json: @article
 
     if @article.save
+
+      # You only need to use flash.now[:notice] if you’re going to render instead of redirecting.
       flash[:notice] = "Article was created successfully"
 
       # redirect_to article_path(@article) # prefix_path . prefix in routes so we use prefix_path

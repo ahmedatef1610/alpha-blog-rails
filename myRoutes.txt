@@ -1,0 +1,235 @@
+--[ Route 1 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | root
+Verb              | GET
+URI               | /
+Controller#Action | pages#home
+--[ Route 2 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | about
+Verb              | GET
+URI               | /about(.:format)
+Controller#Action | pages#about
+--[ Route 3 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | articles
+Verb              | GET
+URI               | /articles(.:format)
+Controller#Action | articles#index
+--[ Route 4 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /articles(.:format)
+Controller#Action | articles#create
+--[ Route 5 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_article
+Verb              | GET
+URI               | /articles/new(.:format)
+Controller#Action | articles#new
+--[ Route 6 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_article
+Verb              | GET
+URI               | /articles/:id/edit(.:format)
+Controller#Action | articles#edit
+--[ Route 7 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | article
+Verb              | GET
+URI               | /articles/:id(.:format)
+Controller#Action | articles#show
+--[ Route 8 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /articles/:id(.:format)
+Controller#Action | articles#update
+--[ Route 9 ]------------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /articles/:id(.:format)
+Controller#Action | articles#update
+--[ Route 10 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /articles/:id(.:format)
+Controller#Action | articles#destroy
+--[ Route 11 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | signup
+Verb              | GET
+URI               | /signup(.:format)
+Controller#Action | users#new
+--[ Route 12 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | users
+Verb              | GET
+URI               | /users(.:format)
+Controller#Action | users#index
+--[ Route 13 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /users(.:format)
+Controller#Action | users#create
+--[ Route 14 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_user
+Verb              | GET
+URI               | /users/:id/edit(.:format)
+Controller#Action | users#edit
+--[ Route 15 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | user
+Verb              | GET
+URI               | /users/:id(.:format)
+Controller#Action | users#show
+--[ Route 16 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /users/:id(.:format)
+Controller#Action | users#update
+--[ Route 17 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /users/:id(.:format)
+Controller#Action | users#update
+--[ Route 18 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /users/:id(.:format)
+Controller#Action | users#destroy
+--[ Route 19 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | login
+Verb              | GET
+URI               | /login(.:format)
+Controller#Action | sessions#new
+--[ Route 20 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /login(.:format)
+Controller#Action | sessions#create
+--[ Route 21 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | logout
+Verb              | DELETE
+URI               | /logout(.:format)
+Controller#Action | sessions#destroy
+--[ Route 22 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_postmark_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/postmark/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/postmark/inbound_emails#create
+--[ Route 23 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_relay_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/relay/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/relay/inbound_emails#create
+--[ Route 24 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_sendgrid_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/sendgrid/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/sendgrid/inbound_emails#create
+--[ Route 25 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_mandrill_inbound_health_check
+Verb              | GET
+URI               | /rails/action_mailbox/mandrill/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/mandrill/inbound_emails#health_check
+--[ Route 26 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_mandrill_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/mandrill/inbound_emails(.:format)
+Controller#Action | action_mailbox/ingresses/mandrill/inbound_emails#create
+--[ Route 27 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_mailgun_inbound_emails
+Verb              | POST
+URI               | /rails/action_mailbox/mailgun/inbound_emails/mime(.:format)
+Controller#Action | action_mailbox/ingresses/mailgun/inbound_emails#create
+--[ Route 28 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_emails
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#index
+--[ Route 29 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | POST
+URI               | /rails/conductor/action_mailbox/inbound_emails(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#create
+--[ Route 30 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_rails_conductor_inbound_email
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails/new(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#new
+--[ Route 31 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | edit_rails_conductor_inbound_email
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails/:id/edit(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#edit
+--[ Route 32 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_email
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#show
+--[ Route 33 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PATCH
+URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#update
+--[ Route 34 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | PUT
+URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#update
+--[ Route 35 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | DELETE
+URI               | /rails/conductor/action_mailbox/inbound_emails/:id(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails#destroy
+--[ Route 36 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | new_rails_conductor_inbound_email_source
+Verb              | GET
+URI               | /rails/conductor/action_mailbox/inbound_emails/sources/new(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails/sources#new
+--[ Route 37 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_email_sources
+Verb              | POST
+URI               | /rails/conductor/action_mailbox/inbound_emails/sources(.:format)
+Controller#Action | rails/conductor/action_mailbox/inbound_emails/sources#create
+--[ Route 38 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_conductor_inbound_email_reroute
+Verb              | POST
+URI               | /rails/conductor/action_mailbox/:inbound_email_id/reroute(.:format)
+Controller#Action | rails/conductor/action_mailbox/reroutes#create
+--[ Route 39 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_service_blob
+Verb              | GET
+URI               | /rails/active_storage/blobs/redirect/:signed_id/*filename(.:format)
+Controller#Action | active_storage/blobs/redirect#show
+--[ Route 40 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_service_blob_proxy
+Verb              | GET
+URI               | /rails/active_storage/blobs/proxy/:signed_id/*filename(.:format)
+Controller#Action | active_storage/blobs/proxy#show
+--[ Route 41 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /rails/active_storage/blobs/:signed_id/*filename(.:format)
+Controller#Action | active_storage/blobs/redirect#show
+--[ Route 42 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_blob_representation
+Verb              | GET
+URI               | /rails/active_storage/representations/redirect/:signed_blob_id/:variation_key/*filename(.:format)
+Controller#Action | active_storage/representations/redirect#show
+--[ Route 43 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_blob_representation_proxy
+Verb              | GET
+URI               | /rails/active_storage/representations/proxy/:signed_blob_id/:variation_key/*filename(.:format)
+Controller#Action | active_storage/representations/proxy#show
+--[ Route 44 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | 
+Verb              | GET
+URI               | /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format)
+Controller#Action | active_storage/representations/redirect#show
+--[ Route 45 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_disk_service
+Verb              | GET
+URI               | /rails/active_storage/disk/:encoded_key/*filename(.:format)
+Controller#Action | active_storage/disk#show
+--[ Route 46 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | update_rails_disk_service
+Verb              | PUT
+URI               | /rails/active_storage/disk/:encoded_token(.:format)
+Controller#Action | active_storage/disk#update
+--[ Route 47 ]-----------------------------------------------------------------------------------------------------------------------------
+Prefix            | rails_direct_uploads
+Verb              | POST
+URI               | /rails/active_storage/direct_uploads(.:format)
+Controller#Action | active_storage/direct_uploads#create

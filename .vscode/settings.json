@@ -1,9 +1,11 @@
 {
     "cSpell.words": [
         "activestorage",
+        "Atef",
         "bcrypt",
         "byebug",
         "conninfo",
+        "createdb",
         "createuser",
         "datetime",
         "digg",
@@ -15,6 +17,7 @@
         "hossain",
         "jquery",
         "laquo",
+        "libpq",
         "mashrur",
         "pgrep",
         "popperjs",
@@ -24,9 +27,14 @@
         "rdoc",
         "ridk",
         "rufo",
+        "signup",
         "solargraph",
         "stylesheet",
+        "tbody",
+        "thead",
         "turbolinks",
-        "webpacker"
+        "webpacker",
+        "webserver",
+        "xlink"
     ]
 }

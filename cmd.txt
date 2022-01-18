@@ -114,11 +114,14 @@ article.save
 Article.all
 =====================================================================================================
 
-reload!
+reload!  => use this when change in models files
 ===================
 # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 byebug
 continue # again work server
+# you can use on rails s
+$ params
+$ continue
 ===================
 heroku login
 heroku git:remote -a alpha-blog-rails-eg
@@ -128,6 +131,9 @@ heroku open
 heroku run rails console
 =====================================================================================================
 https://www.mashrurhossain.com/blog/rails6bootstrap4
+
+yarn add bootstrap@5.1.3 jquery popper.js
+
 yarn add jquery
 yarn add bootstrap@5.1.3
 yarn add @popperjs/core@2.10.2
@@ -165,13 +171,19 @@ cd 1-complete_ruby__mashrur_hossain/2-intro_ruby_on_rails/alpha_blog/
 rails s -b 0.0.0.0
 rails c
 
-rails routes --expanded
+rails routes --expanded | grep edit
+rails routes -E
 rails routes -c articles
+rails routes -c articles --expanded
 rails routes -c users
 
 dokku run production rails routes --expanded
-=====================================================================================================
 
+=====================================================================================================
+=====================================================================================================
+=====================================================================================================
+=====================================================================================================
+=====================================================================================================
 sudo apt install postgresql
 sudo service postgresql start
 sudo -u postgres psql
@@ -193,12 +205,8 @@ rake db:migrate
 rails s # webserver
 rails c # debug development
 
-
-
 sudo apt-get install libpq-dev
 =============================================
-
-
 ls /etc/postgresql/12/main
 cat /etc/postgresql/12/main/
 service postgresql
@@ -212,15 +220,13 @@ sudo -u postgres createuser --interactive
 sudo -u postgres createdb spider_nest_development
 sudo -u postgres createdb spider_nest_development
 
-
 sudo -u postgres psql
 sudo -u ahmed psql
-
-
 
 \conninfo
 \l
 \du
-
 =====================================================================================================
-
+wsl --list --verbose
+wsl --shutdown
+=====================================================================================================
