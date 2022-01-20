@@ -177,6 +177,9 @@ rails generate integration_test list_categories
 rails test test/integration/list_categories.rb
 
 ===================
+rails generate migration create_article_categories
+rails db:migrate
+===================
 
 =====================================================================================================
 bundle config without production

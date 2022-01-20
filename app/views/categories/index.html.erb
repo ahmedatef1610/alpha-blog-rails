@@ -2,12 +2,17 @@
   <div class="container my-3">
 
     <h1 class="text-center mt-3">Listing all categories 📋</h1>
+    <div class="text-center mt-3">
+      <%= link_to "Create a New category", new_category_path , class: "btn btn-primary" %>
+    </div>
+
     <% for category, index in @categories.each_with_index %>
       <div class="row justify-content-center mt-3">
         <div class="col-8">
           <div class="card text-center shadow">
             <div class="card-body">
               <h5 class="card-title"><%= link_to category.name, category_path(category), class: "text-success" %></h5>
+              <p class="card-text"><%= pluralize(category.articles.count, "article") %></p>
             </div>
             <div class="card-footer text-muted">
               <small>Created <%= time_ago_in_words(category.created_at) %> ago, 

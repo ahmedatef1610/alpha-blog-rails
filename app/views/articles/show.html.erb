@@ -11,6 +11,9 @@
             <span><%= @article.user ? @article.user.username : "anonymous" %></span>
             <span><%# @article.user.username if @article.user %></span>
             <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+            <% if @article.categories.any? %>
+              <div class="mt-2"><%= render @article.categories %></div> 
+            <% end %>
           </div>
           <div class="card-body">
             <div class="card-text text-start"><%= simple_format(@article.description) %></div>
