@@ -42,6 +42,21 @@
           </ul>
         </li>
 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle <%= @activeInNavbar=="categories" ? "active" : "" %>" href="#" id="navbarDropdown" data-bs-toggle="dropdown">
+            Categories
+          </a>
+          <ul class="dropdown-menu">
+          
+            <% if logged_in? && current_user.admin? %>
+              <li><a class="dropdown-item <%= @activeInNavbar=="new_category" ? "active" : "" %>" href="<%= new_category_path %>">Create a New Category</a></li>
+            <% end %>  
+
+            <li><a class="dropdown-item <%= @activeInNavbar=="categories" ? "active" : "" %>" href="<%= categories_path %>">View Categories</a></li>
+
+          </ul>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link <%= @activeInNavbar=="users" ? "active" : "" %>" href="<%= users_path %>">Bloggers</a>
         </li>

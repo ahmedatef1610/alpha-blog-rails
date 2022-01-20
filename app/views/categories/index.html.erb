@@ -1,0 +1,31 @@
+<main class="flex-grow-1">
+  <div class="container my-3">
+
+    <h1 class="text-center mt-3">Listing all categories 📋</h1>
+    <% for category, index in @categories.each_with_index %>
+      <div class="row justify-content-center mt-3">
+        <div class="col-8">
+          <div class="card text-center shadow">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to category.name, category_path(category), class: "text-success" %></h5>
+            </div>
+            <div class="card-footer text-muted">
+              <small>Created <%= time_ago_in_words(category.created_at) %> ago, 
+                Edited <%= time_ago_in_words(category.updated_at) %> ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="my-5 text-center">
+      <%= will_paginate @categories, :container => false, renderer: WillPaginate::ActionView::BootstrapLinkRenderer, list_classes: %w(pagination pagination justify-content-center), previous_label: '&laquo;', next_label: '&raquo;' %>
+      <div class="page_info small">
+        <%= page_entries_info @categories %>
+      </div>
+    </div>
+  </div>
+
+  
+</main>
+<%= render "layouts/footer"%>

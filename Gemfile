@@ -30,6 +30,7 @@ gem "htmlbeautifier", "~> 1.3", ">= 1.3.1"
 
 gem "will_paginate", "~> 3.3"
 gem "will_paginate-bootstrap-style"
+gem "rexml", require: false
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

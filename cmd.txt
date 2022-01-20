@@ -165,6 +165,19 @@ rails db:migrate
 
 =====================================================================================================
 
+rails test
+rails generate test_unit:scaffold category
+rails test test/controllers
+rails test test/system
+rails test test/controllers/categories_controller_test.rb
+rails generate integration_test create_category
+rails test
+rails test test/integration/create_category_test.rb
+rails generate integration_test list_categories
+rails test test/integration/list_categories.rb
+
+===================
+
 =====================================================================================================
 bundle config without production
 bundle install
