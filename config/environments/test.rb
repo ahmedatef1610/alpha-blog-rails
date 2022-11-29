@@ -6,8 +6,8 @@ require "active_support/core_ext/integer/time"
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
+  config.hosts << "alpha-blog-rails-eg.up.railway.app"
   # Settings specified here will take precedence over those in config/application.rb.
-
   config.cache_classes = true
 
   # Do not eager load code on boot. This avoids loading your whole application
